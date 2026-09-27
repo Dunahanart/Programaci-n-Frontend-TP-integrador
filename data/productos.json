@@ -1,0 +1,48 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Tarot de Marsella",
+        "descripcion": "72 cartas del tarot de Marsellas",
+        "precio": 21000,
+        "img": "./img/1.JPG"
+      },
+      {
+        "id": 2,
+        "nombre": "Quit Mágico",
+        "descripcion": "Herramienta para quitar energías negativas",
+        "precio": 15000,
+        "img": "./img/2.JPG"
+      },
+      {
+        "id": 3,
+        "nombre": "Bola de cristal",
+        "descripcion": "Zapatos deportivos para correr",
+        "precio": 30000,
+        "img": "./img/3.JPG"
+      },
+
+      {
+        "id": 4,
+        "nombre": "Talismán",
+        "descripcion": "Talismanes de protección",
+        "precio": 25000,
+        "img": "./img/4.JPG"
+      },
+      {
+        "id": 5,
+        "nombre": "Varita mágica",
+        "descripcion": "Varita para realizar hechizos",
+        "precio": 35000,
+        "img": "./img/5.JPG"
+      },
+
+      {
+        "id": 6,
+        "nombre": "Péndulo",
+        "descripcion": "Herramienta para comunicarse con otros seres",
+        "precio": 22000,
+        "img": "./img/6.JPG"
+      }
+    ]
+}

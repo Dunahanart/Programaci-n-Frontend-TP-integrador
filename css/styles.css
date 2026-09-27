@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    font-family: EB Garamond;
+    font-size: 1.6rem;
+    background: #1B2620;
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 2rem;
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 800px;
+    line-height: 1.15;
+    margin: 3rem 0;
+}
+h2{
+    color: antiquewhite;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.btn {
+    border:none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 1.6rem;
+    border-radius: 1rem;
+    color: #D1D1D1;
+}
+
+.btn-eliminar-carrito {
+    background-color: #477a46;
+    border: 2px solid #b8d0a6;
+}
+
+.btn-vaciar-carrito {
+    background-color:#C5A059;
+    color: #1d1a20;
+}
+
+.btn-vaciar-carrito:hover {
+    background-color: #C5A059;
+}
+
+
+header, footer{
+    background-color: #7D7D7D ;
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.div-logo {
+    margin-left: 2rem;
+    font-weight: bold;
+}
+
+.logo, .header-nav ul li a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: inherit;
+    display: inline-block;
+    padding: 2rem;
+}
+
+.logo{
+   width: 22%;
+   
+}
+
+.header-nav{
+    margin-right: 2rem;
+    font-family: Cinzel;
+}
+
+.header-nav ul,
+footer .footer-list {
+    list-style: none;
+
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-list img {
+    width: 5rem;
+    padding: 0.5rem;
+}
+
+.footer-list li{
+padding: 1rem;
+}
+
+#contador-carrito {
+    margin-left: 8px;
+}
+
+/*--------------COLORES----------------*/
+
+.bg-primary {
+    background-color: blue;
+}
+.bg-secondary {
+    background-color: #C5A059;
+}
+.text-light {
+    color: #7D7D7D;
+}
+.text-dark{
+    color: #1B2620;
+}
+.text-secondary{
+    color:#D1D1D1;
+}
+
+
+/*--------------HOME----------------*/
+
+.parrafo{
+    width: 80%;
+    text-align: center;
+    font-size: 2rem;
+    padding: 3rem;
+}
+
+.contenedor-tarjetas{
+    margin-top:2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:2rem;
+}
+.card {
+    background-color: #4A5D4E;
+    width: 30rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+    color: #D1D1D1;
+
+}
+.card img{
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+
+/*--------------Contactos----------------*/
+
+.titulo-contacto{
+    margin: 2rem 0;
+}
+
+.form-contacto{
+    background-color: #7D7D7D;
+    color: #1B2620;
+    width: 100%;
+    max-width: 50rem;
+    font-size: 2rem;
+    padding: 3rem;
+    border-radius: 1rem;
+
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+
+}
+
+.grupo-input{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+
+}
+
+.grupo-input input,
+.grupo-input textarea{
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 2px #C5A059;
+    margin-bottom: 3rem;
+}
+/*--------------Carrito----------------*/
+
+.mensaje-carrito-vacio {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.acciones-carrito {
+    margin-top: 2rem;
+}
+
+
+/*--------------MEDIA QUERIES----------------*/
+
+@media (max-width:600px){
+
+    header,
+    footer {
+        flex-direction: column;
+    }
+.header-nav,
+div logo {
+    margin: 0;
+}
+
+.logo {
+    visibility: hidden;
+    display: none;
+}
+
+}
