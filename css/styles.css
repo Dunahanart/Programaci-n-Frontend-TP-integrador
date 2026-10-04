@@ -31,7 +31,7 @@ main {
 
 h1{
     font-size: 3rem;
-    font-weight: 800px;
+    font-weight: 800;
     line-height: 1.15;
     margin: 3rem 0;
 }
@@ -58,13 +58,26 @@ h2{
     border: 2px solid #b8d0a6;
 }
 
+.btn-eliminar-carrito:hover {
+    background-color: #568f54;
+}
+
 .btn-vaciar-carrito {
     background-color:#C5A059;
     color: #1d1a20;
 }
 
 .btn-vaciar-carrito:hover {
-    background-color: #C5A059;
+    background-color: #D9B772;
+}
+
+/* estado de foco visible: accesibilidad (navegación con teclado) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #C5A059;
+    outline-offset: 3px;
 }
 
 
@@ -177,6 +190,13 @@ padding: 1rem;
     object-fit: cover;
 }
 
+.card-desc{
+    font-size: 1.4rem;
+    line-height: 1.4;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
 
 /*--------------Contactos----------------*/
 
@@ -212,6 +232,22 @@ padding: 1rem;
     border-bottom: solid 2px #C5A059;
     margin-bottom: 3rem;
 }
+
+/* mensaje de error del formulario de contacto (contraste 13.3:1 sobre #1B2620) */
+.mensaje-error{
+    background-color: #1B2620;
+    color: #FAEBD7;
+    border-left: solid 4px #C5A059;
+    border-radius: 0.4rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.8rem;
+}
+
+.mensaje-error:empty{
+    display: none;
+}
 /*--------------Carrito----------------*/
 
 .mensaje-carrito-vacio {
@@ -233,14 +269,15 @@ padding: 1rem;
     footer {
         flex-direction: column;
     }
-.header-nav,
-div logo {
-    margin: 0;
-}
 
-.logo {
-    visibility: hidden;
-    display: none;
-}
+    .header-nav,
+    .div-logo {
+        margin: 0;
+    }
+
+    .logo {
+        visibility: hidden;
+        display: none;
+    }
 
 }

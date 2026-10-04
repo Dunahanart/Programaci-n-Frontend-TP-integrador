@@ -3,23 +3,23 @@
       {
         "id": 1,
         "nombre": "Tarot de Marsella",
-        "descripcion": "72 cartas del tarot de Marsellas",
+        "descripcion": "72 cartas del tarot de Marsella",
         "precio": 21000,
-        "img": "./img/1.JPG"
+        "img": "img/1.JPG"
       },
       {
         "id": 2,
         "nombre": "Quit Mágico",
         "descripcion": "Herramienta para quitar energías negativas",
         "precio": 15000,
-        "img": "./img/2.JPG"
+        "img": "img/2.JPG"
       },
       {
         "id": 3,
         "nombre": "Bola de cristal",
-        "descripcion": "Zapatos deportivos para correr",
+        "descripcion": "Herramienta para ver más allá de tus ojos",
         "precio": 30000,
-        "img": "./img/3.JPG"
+        "img": "img/3.JPG"
       },
 
       {
@@ -27,14 +27,14 @@
         "nombre": "Talismán",
         "descripcion": "Talismanes de protección",
         "precio": 25000,
-        "img": "./img/4.JPG"
+        "img": "img/4.JPG"
       },
       {
         "id": 5,
         "nombre": "Varita mágica",
         "descripcion": "Varita para realizar hechizos",
         "precio": 35000,
-        "img": "./img/5.JPG"
+        "img": "img/5.JPG"
       },
 
       {
@@ -42,7 +42,7 @@
         "nombre": "Péndulo",
         "descripcion": "Herramienta para comunicarse con otros seres",
         "precio": 22000,
-        "img": "./img/6.JPG"
+        "img": "img/6.JPG"
       }
     ]
 }

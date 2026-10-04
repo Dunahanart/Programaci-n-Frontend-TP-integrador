@@ -19,6 +19,10 @@ const renderizarProductos = () => {
         const titulo = document.createElement("h3");
         titulo.textContent = producto.nombre;
 
+        const descripcion = document.createElement("p");
+        descripcion.classList.add("card-desc");
+        descripcion.textContent = producto.descripcion;
+
         const precio = document.createElement("p");
         precio.textContent = `$${producto.precio}`;
 
@@ -32,6 +36,7 @@ const renderizarProductos = () => {
 
         tarjeta.appendChild(img);
         tarjeta.appendChild(titulo);
+        tarjeta.appendChild(descripcion);
         tarjeta.appendChild(precio);
         tarjeta.appendChild(boton);
 
@@ -39,7 +44,11 @@ const renderizarProductos = () => {
         contenedor.appendChild(tarjeta);
       }),
     )
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.error("No se pudo cargar el catálogo:", error);
+      contenedor.innerHTML =
+        "<p class='card-desc'>No pudimos cargar el catálogo. Recargá la página.</p>";
+    });
 
 };
 
