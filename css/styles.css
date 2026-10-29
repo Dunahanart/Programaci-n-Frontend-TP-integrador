@@ -532,6 +532,9 @@ padding: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
+    /* separa la caja del total de la fila de botones; sin este margen ambas
+       cajas se tocaban (0 px) y los botones quedaban pegados al resumen */
+    margin-top: 2rem;
 }
 
 .resumen {
