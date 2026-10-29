@@ -15,7 +15,7 @@ body{
     color: antiquewhite;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 main {
@@ -51,24 +51,43 @@ h2{
     padding: 1.6rem;
     border-radius: 1rem;
     color: #D1D1D1;
+    cursor: pointer;
+    transition: background-color .22s ease, color .22s ease, transform .15s ease;
 }
 
+/* sensación de presión al hacer clic */
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* verde más oscuro: el texto pasa de 3.3:1 a 5.3:1 (WCAG AA) */
 .btn-eliminar-carrito {
-    background-color: #477a46;
+    background-color: #3E6B3D;
     border: 2px solid #b8d0a6;
+    color: #FAEBD7;
 }
 
 .btn-eliminar-carrito:hover {
-    background-color: #568f54;
+    background-color: #447444;
+}
+
+.btn-finalizar-carrito {
+    background-color:#C5A059;
+    color: #1B2620;
+}
+
+.btn-finalizar-carrito:hover {
+    background-color: #D9B772;
 }
 
 .btn-vaciar-carrito {
-    background-color:#C5A059;
-    color: #1d1a20;
+    background-color: transparent;
+    color: #FAEBD7;
+    border: 2px solid #C5A059;
 }
 
 .btn-vaciar-carrito:hover {
-    background-color: #D9B772;
+    background-color: rgba(197, 160, 89, 0.18);
 }
 
 /* estado de foco visible: accesibilidad (navegación con teclado) */
@@ -173,6 +192,7 @@ padding: 1rem;
 .card {
     background-color: #4A5D4E;
     width: 30rem;
+    border: 2px solid transparent;
     border-radius: 1rem;
     overflow: hidden;
     display: flex;
@@ -182,12 +202,37 @@ padding: 1rem;
     padding-bottom: 2rem;
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
     color: #D1D1D1;
+    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
 
 }
+
+/* la tarjeta se ilumina al pasar el mouse (y también al enfocarla con teclado) */
+.card:hover,
+.card:focus-within {
+    transform: translateY(-0.6rem);
+    border-color: #C5A059;
+    box-shadow: 0 18px 38px rgba(197, 160, 89, 0.32);
+}
+
 .card img{
     width: 100%;
     height: 20rem;
     object-fit: cover;
+    transition: transform .45s ease;
+}
+
+.card:hover img,
+.card:focus-within img {
+    transform: scale(1.06);
+}
+
+.card h3 {
+    transition: color .28s ease;
+}
+
+.card:hover h3,
+.card:focus-within h3 {
+    color: #FAEBD7;
 }
 
 .card-desc{
@@ -195,6 +240,183 @@ padding: 1rem;
     line-height: 1.4;
     text-align: center;
     padding: 0 1.5rem;
+}
+
+.card-precio{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #FAEBD7;
+}
+
+.card-subtotal{
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #FAEBD7;
+}
+
+
+/*--------------BUSCADOR----------------*/
+
+.buscador{
+    width: 100%;
+    max-width: 46rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.buscador label{
+    font-family: Cinzel;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: #C5A059;
+}
+
+.buscador input{
+    width: 100%;
+    font-family: EB Garamond;
+    font-size: 1.8rem;
+    color: #FAEBD7;
+    background-color: #4A5D4E;
+    border: 2px solid #C5A059;
+    border-radius: 1rem;
+    padding: 1.2rem 1.6rem;
+    transition: border-color .2s ease;
+}
+
+.buscador input::placeholder{
+    color: #DDE5DE;
+    opacity: 1;
+}
+
+.buscador input:hover{
+    border-color: #D9B772;
+}
+
+.buscador-estado{
+    min-height: 1.8rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #D1D1D1;
+}
+
+.sin-resultados{
+    width: 100%;
+    padding: 3rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+    color: #FAEBD7;
+    border: 2px dashed #C5A059;
+    border-radius: 1rem;
+}
+
+
+/*--------------CARGA (skeleton)----------------*/
+
+.skeleton{
+    width: 30rem;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #4A5D4E;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+}
+
+.skeleton-img,
+.skeleton-linea{
+    display: block;
+    background-color: #3E4F45;
+    background-image: linear-gradient(90deg, transparent 15%, rgba(255, 255, 255, 0.16) 50%, transparent 85%);
+    background-size: 220% 100%;
+    animation: shimmer 1.3s linear infinite;
+}
+
+.skeleton-img{
+    height: 20rem;
+}
+
+.skeleton-linea{
+    height: 1.4rem;
+    margin: 1.8rem 2rem;
+    border-radius: 0.7rem;
+}
+
+.skeleton-linea.corta{
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes shimmer{
+    from { background-position: 160% 0; }
+    to   { background-position: -60% 0; }
+}
+
+
+/*--------------MENSAJES (toast)----------------*/
+
+/* en reemplazo del alert() que bloqueaba la pantalla */
+.toast{
+    position: fixed;
+    left: 50%;
+    bottom: 3rem;
+    z-index: 100;
+    max-width: min(90vw, 46rem);
+    padding: 1.4rem 2rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    text-align: center;
+    color: #FAEBD7;
+    background-color: #1B2620;
+    border: 2px solid #C5A059;
+    border-radius: 1rem;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translate(-50%, 2rem);
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.toast-visible{
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.toast-exito{
+    border-left: 6px solid #C5A059;
+}
+
+.toast-aviso{
+    border-left: 6px solid #D1D1D1;
+}
+
+
+/*--------------ANIMACIONES----------------*/
+
+/* la tarjeta entra con fundido; "backwards" libera el transform al terminar
+   para que hover y foco sigan funcionando */
+.card-entrada{
+    animation: card-entrada .55s ease-out backwards;
+}
+
+@keyframes card-entrada{
+    from { opacity: 0; transform: translateY(1.4rem); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes contador-pulso{
+    0%   { transform: scale(1); }
+    45%  { transform: scale(1.6); }
+    100% { transform: scale(1); }
+}
+
+#contador-carrito.contador-pulso{
+    display: inline-block;
+    animation: contador-pulso .45s ease-out;
 }
 
 
@@ -206,7 +428,8 @@ padding: 1rem;
 
 .form-contacto{
     background-color: #7D7D7D;
-    color: #1B2620;
+    /* negro sobre #7D7D7D = 5.1:1 (igual que header/footer); con #1B2620 daba 3.79:1 */
+    color: #000000;
     width: 100%;
     max-width: 50rem;
     font-size: 2rem;
@@ -258,11 +481,106 @@ padding: 1rem;
 
 .acciones-carrito {
     margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.6rem;
+}
+
+/* controlador de cantidad:  −  [ n ]  + */
+.stepper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-stepper {
+    width: 3.4rem;
+    height: 3.4rem;
+    padding: 0;
+    border: 2px solid #C5A059;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #FAEBD7;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease, transform .15s ease;
+}
+
+.btn-stepper:hover {
+    background-color: #C5A059;
+    color: #1B2620;
+}
+
+.btn-stepper:active {
+    transform: scale(0.9);
+}
+
+.stepper-cantidad {
+    min-width: 3.4rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FAEBD7;
+}
+
+#resumen-carrito {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.resumen {
+    width: 100%;
+    max-width: 50rem;
+    padding: 2rem;
+    background-color: #1B2620;
+    border: 2px solid #C5A059;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.resumen-detalle {
+    font-size: 1.6rem;
+    color: #D1D1D1;
+}
+
+.resumen-total {
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: #FAEBD7;
+}
+
+.resumen-total span {
+    color: #C5A059;
 }
 
 
 /*--------------MEDIA QUERIES----------------*/
 
+/* pantallas intermedias */
+@media (max-width: 900px){
+
+    main {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+        margin: 2.4rem 0;
+    }
+
+    .parrafo {
+        padding: 2.4rem;
+        font-size: 1.8rem;
+    }
+}
+
+/* pantalla chica */
 @media (max-width:600px){
 
     header,
@@ -275,9 +593,80 @@ padding: 1rem;
         margin: 0;
     }
 
+    /* el nav medía 416px y desbordaba la pantalla chica */
+    .header-nav ul {
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-nav ul li a {
+        font-size: 1.7rem;
+        padding: 1.2rem 1rem;
+    }
+
     .logo {
         visibility: hidden;
         display: none;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    .parrafo {
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    .contenedor-tarjetas {
+        width: 100%;
+        gap: 1.6rem;
+    }
+
+    .card,
+    .skeleton {
+        width: min(30rem, 100%);
+    }
+
+    .buscador {
+        max-width: none;
+    }
+
+    .acciones-carrito {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acciones-carrito .btn {
+        width: 100%;
+    }
+
+    .resumen {
+        max-width: none;
+    }
+
+    .form-contacto {
+        padding: 2rem;
+    }
+
+    .toast {
+        bottom: 1.6rem;
+        max-width: calc(100vw - 3rem);
+    }
+
+}
+
+/* accesibilidad: respeta la preferencia del usuario por menos movimiento */
+@media (prefers-reduced-motion: reduce){
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        transition-duration: 0.01ms !important;
     }
 
 }
